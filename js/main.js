@@ -1,5 +1,9 @@
 const { createApp } = Vue;
 
 createApp({
-  data() {},
+  data() {
+    return {
+      contacts,
+    };
+  },
 }).mount("#app");

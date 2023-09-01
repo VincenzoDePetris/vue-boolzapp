@@ -24,7 +24,7 @@
     <!-- JS LIST -->
     <script src="./js/list.js" defer></script>
     <!-- JS -->
-    <script src="./js/style.js" defer></script>
+    <script src="./js/main.js" defer></script>
     <!-- VUE -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
@@ -77,11 +77,14 @@
           </div>
           <!-- lista persone -->
           <div class="contact">
-            <div class="single-contact d-flex">
-              <div><img src="./img/avatar_1.jpg" alt="avatar" /></div>
+            <div
+              class="single-contact d-flex"
+              v-for="(contact, index) in contacts"
+            >
+              <div><img :src="contacts[index].avatar" alt="avatar" /></div>
               <div class="scritte d-flex justify-content-between">
                 <div>
-                  <h1 class="mb-0">Mihcele</h1>
+                  <h1 class="mb-0">{{ contacts[index].name }}</h1>
                   <p>Ultimo messaggio inviato</p>
                 </div>
                 <div class="m-1 mt-0">
@@ -94,7 +97,35 @@
         <!-- VIASUALIZZAZIONE MESSAGGI -->
         <div class="message-section">
           <!-- PARTE SUPERIORE ZONA MESSAGGI-->
-          <header></header>
+          <header class="d-flex justify-content-between align-items-center">
+            <div class="d-flex">
+              <div><img src="./img/avatar_1.png" alt="avatar" /></div>
+              <div>
+                <h1>Michele</h1>
+                <p>Ultimo accesso oggi alle 12:00</p>
+              </div>
+            </div>
+            <div class="d-flex m-3">
+              <div class="icon m-3">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <div class="icon m-3"><i class="fa-solid fa-paperclip"></i></div>
+              <div class="icon m-3">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </header>
+          <div class="message-collocation"></div>
+          <!-- ZONA PER SCRIVERE IL MESSAGGIO -->
+          <div>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Scrivi un messaggio"
+              value=""
+              aria-label="Scrivi un messaggio"
+            />
+          </div>
         </div>
       </main>
     </div>
