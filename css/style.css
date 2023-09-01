@@ -124,6 +124,7 @@ img {
 .message-collocation {
   width: 100%;
   height: 1039px;
+  flex-direction: column;
   background-image: url("..//img/mine.jpg");
 }
 
@@ -138,10 +139,36 @@ img {
   width: 95%;
 }
 
+.message {
+  margin: 5px 20px;
+  min-height: 80px;
+  min-width: 300px;
+  border-radius: 10px;
+}
+
 .ricevuti {
   background-color: gray;
+  align-self: flex-start;
 }
 
 .inviati {
   background-color: green;
+  align-self: flex-end;
+}
+
+.text-m {
+  align-self: center;
+  margin: 0 5px;
+}
+
+.date {
+  font-size: 1rem;
+  align-self: flex-end;
+  margin: 0;
+}
+
+/* INTERAZIONI */
+
+.clicked-chat {
+  background-color: aqua;
 }
