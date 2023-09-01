@@ -1,0 +1,87 @@
+main {
+  width: 80vw;
+  height: 95vh;
+  background-color: blue;
+  margin: auto;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* SIDEBAR */
+
+.sidebar-section {
+  width: 25%;
+  height: 80vh;
+  background-color: #fafafa;
+}
+
+.icon {
+  color: rgb(177, 177, 177);
+}
+
+.icon:hover {
+  color: rgb(106, 106, 106);
+  cursor: pointer;
+}
+
+.sidebar-section header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(234, 234, 234);
+}
+
+.sidebar-section header img {
+  border-radius: 50%;
+  height: 50px;
+  margin: 5px 0 0 5px;
+}
+
+/* sezione attiva notifiche */
+
+.notifiche {
+  background-color: rgb(142, 218, 252);
+}
+
+.bell {
+  background-color: white;
+  border-radius: 50%;
+  color: rgb(142, 218, 252);
+}
+
+.notifiche p span a {
+  color: rgb(100, 140, 163);
+}
+
+/* sezione contatti */
+
+.contact {
+  height: 100%;
+  overflow-y: scroll;
+  background-color: #fafafa;
+}
+
+.single-contact img {
+  border-radius: 50%;
+  height: 100px;
+  margin: 3px 5px;
+}
+
+.scritte {
+  width: 100%;
+}
+
+.scritte p {
+  font-size: 1rem;
+  color: rgb(106, 106, 106);
+}
+
+/* MESSAHE SECTION */
+
+.message-section {
+  width: 70%;
+}
