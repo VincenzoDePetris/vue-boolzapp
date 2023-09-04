@@ -15,6 +15,7 @@ createApp({
         message: "Ok",
         status: "received",
       },
+      filterText: "",
     };
   },
   methods: {
@@ -31,6 +32,18 @@ createApp({
         }, 1000);
       }
       this.newMessage.message = "";
+    },
+
+    compare() {
+      this.contacts.forEach((contact) => {
+        if (
+          contact.name.toLowerCase().includes(this.filterText.toLowerCase())
+        ) {
+          contact.visible = true;
+        } else {
+          contact.visible = false;
+        }
+      });
     },
   },
 }).mount("#app");
