@@ -65,7 +65,7 @@
           </div>
           <!-- barra di ricerca -->
           <div class="p-1">
-            <div class="input-group mb-3">
+            <div class="input-group mb-2 mt-2">
               <input
                 type="text"
                 class="form-control"
@@ -81,14 +81,15 @@
               class="single-contact d-flex"
               v-for="(contact, index) in contacts"
               @click="setContact(index)"
+              :class="(index == current) ? 'clicked-chat' : ''"
             >
-              <div><img :src="contact.avatar" alt="avatar" /></div>
+              <div><img :src="contact.avatar" alt="avatar" class="mx-3" /></div>
               <div class="scritte d-flex justify-content-between">
-                <div>
+                <div class="mx-4">
                   <h1 class="mb-0">{{ contact.name }}</h1>
                   <p>Ultimo messaggio inviato</p>
                 </div>
-                <div class="m-1 mt-0">
+                <div class="mx-2 mt-1">
                   <p>12:00</p>
                 </div>
               </div>
@@ -124,7 +125,12 @@
               :class="(message.status == 'sent') ? 'inviati' : 'ricevuti'"
             >
               <p class="text-m">{{ message.message }}</p>
-              <p class="date">{{ message.date }}</p>
+              <div class="d-flex delete-date">
+                <p class="date m-1">{{ message.date }}</p>
+                <div class="delete m-1">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+              </div>
             </div>
           </div>
           <!-- ZONA PER SCRIVERE IL MESSAGGIO -->
@@ -138,8 +144,9 @@
               class="form-control"
               type="text"
               placeholder="Scrivi un messaggio"
-              value=""
+              v-model="newMessage.message"
               aria-label="Scrivi un messaggio"
+              @keyup.enter="newCopyMessage()"
             />
             <div class="icon m-3">
               <i class="fa-solid fa-microphone"></i>
